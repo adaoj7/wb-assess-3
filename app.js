@@ -6,7 +6,7 @@ import nunjucks from 'nunjucks';
 import ViteExpress from 'vite-express';
 
 const app = express();
-const port = '8000';
+const port = '8001';
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
@@ -61,6 +61,16 @@ const OTHER_FOSSILS = [
 ];
 
 // TODO: Replace this comment with your code
+
+app.get('/top-fossils', (req,res)=>{
+  let {aust,trex,steg,quetz} = MOST_LIKED_FOSSILS
+  // let {img,name,num_likes} = aust
+  let fossils = []
+  fossils.push(aust,trex,steg,quetz)
+  console.log(MOST_LIKED_FOSSILS)
+  res.render('top-fossils.html.njk',
+  {data: fossils})
+})
 
 app.get('/random-fossil.json', (req, res) => {
   const randomFossil = lodash.sample(OTHER_FOSSILS);

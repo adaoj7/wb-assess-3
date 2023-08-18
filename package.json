@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon app.js -w app.js -w src -w public -w views -e html,css,js --delay 2.5",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "nodemon app.js -w app.js -w public -w views -e html,css,js,njk --delay 2.5"
   },
   "devDependencies": {
     "vite": "^4.3.9",
