@@ -2,13 +2,14 @@
   {% block title %}Most Liked Fossils{% endblock title %}
   
   {% block body %}
-      <script>console.log({{data[0]}})</script>
+    <h1>Welcome, {{ sess.name }}</h1>
+      {# <script>console.log({{data[0]}})</script> #}
     <div class="fossil-div">
       {%for fossil in data %}
-      <script>
+      {# <script>
         console.log({{fossil.name}})
-      </script>
-      <h3>{{ fossil.name }}</h3>
+      </script> #}
+      <h3>{{ sess.name }}, this is a {{ fossil.name }}</h3>
       <h2>Liked {{ fossil.num_likes }} times.</h2>
       <img src="{{ fossil.img }}" />
       {% endfor %}
