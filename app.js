@@ -101,6 +101,9 @@ app.get('/random-fossil.json', (req, res) => {
 app.post('/like-fossil',(req,res) => {
   like = req.body.like
   let sess = req.session
+  res.render('thank-you.html.njk',{
+    sess
+  })
 })
 
 ViteExpress.listen(app, port, () => {
