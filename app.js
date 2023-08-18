@@ -98,6 +98,11 @@ app.get('/random-fossil.json', (req, res) => {
   res.json(randomFossil);
 });
 
+app.post('/like-fossil',(req,res) => {
+  like = req.body.like
+  let sess = req.session
+})
+
 ViteExpress.listen(app, port, () => {
   console.log(`Server running on http://localhost:${port}...`);
 });
