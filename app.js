@@ -62,8 +62,12 @@ const OTHER_FOSSILS = [
 
 // TODO: Replace this comment with your code
 app.get('/',(req,res) =>{
-  res.render('homepage.html.njk')
-
+  if (req.session.name) {
+    res.render('/top-fossils')
+  } else {
+    res.render('homepage.html.njk')
+  }
+  
 })
 
 app.get('/get-name', (req,res)=>{

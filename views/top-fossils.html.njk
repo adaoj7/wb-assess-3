@@ -13,6 +13,10 @@
       <h2>Liked {{ fossil.num_likes }} times.</h2>
       <img src="{{ fossil.img }}" />
       {% endfor %}
+      {# {% for k, v in fossils %} #}
+      <div>
+        {# <h3>{{name}}, this is a {{ v.name}}</h3> #}
+        {# <h2>Liked {{ v.num_likes}} times.</h2> #}
     </div>
   {% endblock body %}
 
